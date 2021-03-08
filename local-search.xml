@@ -4,37 +4,36 @@
   
   
   <entry>
+    <title>Linux学习记录</title>
+    <link href="/2021/03/08/Linux%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    <url>/2021/03/08/Linux%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Linux基础知识"><a href="#Linux基础知识" class="headerlink" title="Linux基础知识"></a>Linux基础知识</h2><span id="more"></span><ol><li><p>linux系统组成：内核、Shell、文件管理系统和应用程序。  </p><blockquote><p>内核：运行程序和管理磁盘和打印机等硬件设备的核心<br>Shell：是系统的用户界面，提供了用户与内核进行交互操作的一种接口，接受用户输入的命令并把它送入到内核中去执行。<br>文件系统：是文件存放在磁盘等存储设备上的组织方法<br>应用程序：程序集  </p></blockquote></li><li><p>linux发行版本  </p><ul><li>RedHat  </li><li>Fedora（由Redhat发展而来）  </li><li>Debian  </li><li>Ubuntu（基于Debian）  </li><li>Slackware</li><li>OpenSUSE</li></ul></li></ol><h2 id="Shell的基本运用"><a href="#Shell的基本运用" class="headerlink" title="Shell的基本运用"></a>Shell的基本运用</h2><h3 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h3><ol><li><p>Shell简介  </p><p> Shell是Linux的一个特殊程序，是内核与用户的接口，是命令语言、命令解释器及程序设计语言的统称。是一个命令语言解释器，拥有自己的Shell命令集，也能被系统中其他应用程序调用。</p></li><li><p>Shell终端  </p></li></ol><ul><li><p>Shell命令提示符</p><div class="hljs code-wrapper"><pre><code class="bash">[root@localhost ~]#   #超级用户的命令提示符[name@localhost ~]$   #普通用户name的命令提示符</code></pre></div><p>  @之前的为已登陆的用户名，以后的为计算机的主机名，默认为localhost，其次为当前目录名。（~表示用户主目录）</p></li><li><p>Shell命令格式<br>命令名 [选项] [参数]</p><ul><li>命令名是描述该命令功能的英语单词或缩写；</li><li>选项是执行该命令的限定参数或者功能参数,通常以’-‘开头，当有多个选项时，可以只使用一个该符号。部分选项以’–’开头，这些选项通常是一个单词，还有少数命令的选项不需要’-‘符号；</li><li>参数是执行该命令所必须的对象，如文件、目录；  </li><li>在Shell中一行中可以键入多行命令，用’;’分隔。在一行命令后加’&#39;表示另起一行继续输入。使用Tab键可以自动补全。</li></ul></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>计算机学习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>python基础</title>
     <link href="/2021/03/06/python%E5%9F%BA%E7%A1%80/"/>
     <url>/2021/03/06/python%E5%9F%BA%E7%A1%80/</url>
     
     <content type="html"><![CDATA[]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/2021/03/06/blog/"/>
-    <url>/2021/03/06/blog/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="/2021/03/06/hello-world/"/>
-    <url>/2021/03/06/hello-world/</url>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></div></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ hexo server<br></code></pre></div></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ hexo generate<br></code></pre></div></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></div></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
     
     
