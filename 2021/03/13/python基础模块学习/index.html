@@ -1,0 +1,658 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://resource.liangzai.online/resource/aixin.ico">
+  <link rel="icon" href="https://resource.liangzai.online/resource/aixin.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  
+    <meta name="description" content="Python基础模块的了解和学习">
+  
+  <meta name="author" content="Lumen">
+  <meta name="keywords" content="">
+  
+  <title>python基础模块学习 - liangzai的学习记录</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.8","typing":{"enable":true,"typeSpeed":75,"cursorChar":"💕","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Liangzaiiiiiii</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://api.liangzai.online') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="python基础模块学习">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-03-13 23:19" pubdate>
+        2021年3月13日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.5k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      42
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">python基础模块学习</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：几秒前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <p>Python基础模块的了解和学习</p>
+<span id="more"></span>
+<h2 id="内置模块-😍"><a href="#内置模块-😍" class="headerlink" title="内置模块 😍"></a>内置模块 😍</h2><ol>
+<li><p>time模块</p>
+<ul>
+<li>时间获取函数</li>
+</ul>
+ <figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> time<br>print(time.time())  <span class="hljs-comment"># 获取当前时间戳</span><br>print(time.ctime()) <span class="hljs-comment"># 获取当前时间并以易读方式表示，返回字符串</span><br>print(time.gmtime()) <span class="hljs-comment"># 获取当前时间，表示为计算机可处理的时间格式,UTC时间，以格式化模板输出  &lt;UTC：协调世界时&gt;</span><br>print(time.asctime()) <span class="hljs-comment"># 未被定义，表示当前时间</span><br>print(time.localtime()) <span class="hljs-comment"># 输出当前时间，以格式化模板输出,本地时间</span><br></code></pre></div></td></tr></table></figure>
+
+<p> 输出：  </p>
+ <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">1615626615.496064<br>Sat Mar 13 17:10:15 2021<br>time.struct_time(tm_year=2021, tm_mon=3, tm_mday=13, tm_hour=9, tm_min=10, tm_sec=15, tm_wday=5, tm_yday=72, tm_isdst=0)<br>Sat Mar 13 17:10:15 2021<br>time.struct_time(tm_year=2021, tm_mon=3, tm_mday=13, tm_hour=17, tm_min=10, tm_sec=15, tm_wday=5, tm_yday=72, tm_isdst=0)<br></code></pre></div></td></tr></table></figure>
+
+<ul>
+<li>时间格式化</li>
+</ul>
+ <figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> time<br>t = time.gmtime()<br>t1 = time.strftime(<span class="hljs-string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>,t)    <span class="hljs-comment"># 格式化时间</span><br>t2 = time.strptime(t1,<span class="hljs-string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>)   <span class="hljs-comment"># 转化时间格式</span><br>print(t1,t2)<br></code></pre></div></td></tr></table></figure>
+
+<p> 输出：  </p>
+ <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">2021-03-13-08:26:17<br>time.struct_time(tm_year=2021, tm_mon=3, tm_mday=13, tm_hour=8, tm_min=45, tm_sec=48, tm_wday=5, tm_yday=72, tm_isdst=-1)<br></code></pre></div></td></tr></table></figure>
+ <!-- 表格（table） -->
+<p> &lt;<img src="https://lumennnnn.oss-cn-beijing.aliyuncs.com/notebook/20210313234205.png" srcset="/img/loading.gif" alt="20210313234205">&gt;</p>
+ <figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> time    <span class="hljs-comment"># 返回一个CPU级别的精确时间计数，单位为秒</span><br>start = time.perf_counter()<br>time.sleep(<span class="hljs-number">3</span>)    <span class="hljs-comment"># 模拟休眠，可以是浮点数。推迟调用线程的运行，可通过参数 secs 指秒数，表示进程挂起的时间。</span><br>end = time.perf_counter()<br>print(end - start)<br></code></pre></div></td></tr></table></figure>
+
+<p> 输出：  </p>
+ <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">3.004556<br></code></pre></div></td></tr></table></figure>
+
+<blockquote>
+<p>perf_counter()适合小一点的程序测试，会计算sleep()时间。<br>time()精确度不高，而且受系统影响，适合表示日期或者大程序的计时。</p>
+</blockquote>
+<hr>
+</li>
+<li><p>os模块</p>
+<ul>
+<li>os模块</li>
+</ul>
+ <figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br><br>os.listdir(<span class="hljs-string">&quot;path&quot;</span>)[:]  <span class="hljs-comment"># 返回一个列表。列表为给定目录下所有文件和子目录，但不包含特殊目录 . 和 ..。默认为当前目录。</span><br>os.makedirs(<span class="hljs-string">&quot;path&quot;</span>)  <span class="hljs-comment"># 递归方式创建路径为 path 的目录。并以数字形式指定目录权限，默认权限为 777 。可以看作功能更强大的 mkdir，它会自动创建叶子节点目录的所有上级目录，而 mkdir 必须在上级目录已经存在情况下，才能创建叶子节点的目录。</span><br>os.rmdir(<span class="hljs-string">&quot;path&quot;</span>)  <span class="hljs-comment"># 删除目录。目录必须存在，并且只能删除空目录。不存在或不为空，都会异常。要想递归删除整个目录树，请使用 shutil.rmtree()。</span><br>os.removedirs(<span class="hljs-string">&quot;parent/child/newdir&quot;</span>)  <span class="hljs-comment"># 递归删除目录。目录必须存在，并且只能删除空目录。不存在或不为空，都会异常。与 rmdir 不同的是，在删除了叶子节点目录后，会逐次删除上级目录，直到遇到不为空的目录。</span><br>os.remove(<span class="hljs-string">&quot;dog.copy.jpeg&quot;</span>)  <span class="hljs-comment"># 删除文件。不能删除目录，给定路径必须为文件，否则会异常。</span><br>os.getenv(<span class="hljs-string">&quot;PATH&quot;</span>)  <span class="hljs-comment"># 获取环境变量。  getenv(key, default=None)</span><br>os.get_exec_path(<span class="hljs-string">&quot;path&quot;</span>)  <span class="hljs-comment"># 返回用于搜索可执行文件的目录列表。看以看作是 PATH 环境变量的列表形式。</span><br>os.rename(<span class="hljs-string">&quot;name&quot;</span>,<span class="hljs-string">&quot;newname&quot;</span>)  <span class="hljs-comment"># 重命名文件</span><br>os.remove()  <span class="hljs-comment"># 删除文件</span><br>os.getcwd()  <span class="hljs-comment"># 获取当前工作路径</span><br>os.walk()    <span class="hljs-comment"># 遍历目录</span><br>os.chdir()   <span class="hljs-comment"># 改变当前工作目录</span><br></code></pre></div></td></tr></table></figure>
+
+<ul>
+<li>os.path模块</li>
+</ul>
+ <figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python">os.path.join()  <span class="hljs-comment"># 连接目录与文件名</span><br>os.path.split() <span class="hljs-comment"># 分割文件名与目录</span><br>os.path.abspath()  <span class="hljs-comment"># 获取绝对路径</span><br>os.path.dirname()  <span class="hljs-comment"># 获取路径</span><br>os.path.basename() <span class="hljs-comment"># 获取文件名或文件夹名</span><br>os.path.splitext() <span class="hljs-comment"># 分离文件名与扩展名</span><br>os.path.isfile()   <span class="hljs-comment"># 判断所给出的路径是否是一个文件</span><br>os.path.isdir()    <span class="hljs-comment"># 判断给出的路径是否是一个目录</span><br></code></pre></div></td></tr></table></figure>
+
+<hr>
+</li>
+<li><p>json模块</p>
+<ul>
+<li>dumps和dump</li>
+</ul>
+ <figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> json<br><span class="hljs-comment"># json.dumps(obj, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None, separators=None, encoding=&quot;utf-8&quot;, default=None, sort_keys=False, **kw)</span><br><span class="hljs-comment"># 将 Python 对象编码成 JSON 字符串</span><br>data = [ &#123; <span class="hljs-string">&#x27;a&#x27;</span> : <span class="hljs-number">1</span>, <span class="hljs-string">&#x27;b&#x27;</span> : <span class="hljs-number">2</span>, <span class="hljs-string">&#x27;c&#x27;</span> : <span class="hljs-number">3</span>, <span class="hljs-string">&#x27;d&#x27;</span> : <span class="hljs-number">4</span>, <span class="hljs-string">&#x27;e&#x27;</span> : <span class="hljs-number">5</span> &#125; ]<br>data2 = json.dumps(data)<br>data3 = json.dumps(&#123;<span class="hljs-string">&#x27;a&#x27;</span>: <span class="hljs-string">&#x27;Runoob&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>: <span class="hljs-number">7</span>&#125;, sort_keys=<span class="hljs-literal">True</span>, indent=<span class="hljs-number">4</span>, separators=(<span class="hljs-string">&#x27;,&#x27;</span>, <span class="hljs-string">&#x27;: &#x27;</span>))<br>print(data2,data3,sep=<span class="hljs-string">&#x27;\n&#x27;</span>)<br><br><span class="hljs-comment"># 使用 dumps（）：将可以转换为 json 对象的对象转换为 String，然后可通过字符流或字节流写入文件</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">save_conf</span>(<span class="hljs-params">confiuration_path, pre_trans_obj</span>):</span><br><span class="hljs-comment">#先用dunps转为string，然后字符流写入</span><br><span class="hljs-comment">#ensure_ascii=False, 减少乱码</span><br>    json_string = json.dumps(pre_trans_obj, ensure_ascii=<span class="hljs-literal">False</span>)<br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(confiuration_path,<span class="hljs-string">&#x27;w&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>        f.write(json_string)<br><br><span class="hljs-comment"># 使用 dump（）：将可转为 json 对象的对象直接写入文件（将两个步骤结合成一个步骤）</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">save_conf</span>(<span class="hljs-params">confiuration_path, pre_trans_obj</span>):</span><br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>（confiuration_path,<span class="hljs-string">&#x27;w&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>        json.dump(pre_trans_obj, f, ensure_ascii=<span class="hljs-literal">False</span>)<br><br></code></pre></div></td></tr></table></figure>
+
+<p> 输出：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">[&#123;<span class="hljs-string">&quot;a&quot;</span>: 1, <span class="hljs-string">&quot;b&quot;</span>: 2, <span class="hljs-string">&quot;c&quot;</span>: 3, <span class="hljs-string">&quot;d&quot;</span>: 4, <span class="hljs-string">&quot;e&quot;</span>: 5&#125;]<br>&#123;<br><span class="hljs-string">&quot;a&quot;</span>: <span class="hljs-string">&quot;Runoob&quot;</span>,<br><span class="hljs-string">&quot;b&quot;</span>: 7<br>&#125;<br></code></pre></div></td></tr></table></figure>
+ <!-- 表格（table） -->
+<p> <strong>Python原始类型向Json类型的转换对照表：</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Python</th>
+<th align="center">Json</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">dict</td>
+<td align="center">object</td>
+</tr>
+<tr>
+<td align="center">list,tuple</td>
+<td align="center">array</td>
+</tr>
+<tr>
+<td align="center">str,unicode</td>
+<td align="center">string</td>
+</tr>
+<tr>
+<td align="center">int,long.float</td>
+<td align="center">number</td>
+</tr>
+<tr>
+<td align="center">True</td>
+<td align="center">true</td>
+</tr>
+<tr>
+<td align="center">False</td>
+<td align="center">fasle</td>
+</tr>
+<tr>
+<td align="center">None</td>
+<td align="center">null</td>
+</tr>
+</tbody></table>
+<ul>
+<li>loads和load</li>
+</ul>
+ <figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> json<br><span class="hljs-comment"># json.loads(s[, encoding[, cls[, object_hook[, parse_float[, parse_int[, parse_constant[, object_pairs_hook[, **kw]]]]]]]])  </span><br><span class="hljs-comment"># 用于解码 JSON 数据。该函数返回 Python 字段的数据类型。</span><br>jsonData = <span class="hljs-string">&#x27;&#123;&quot;a&quot;:1,&quot;b&quot;:2,&quot;c&quot;:3,&quot;d&quot;:4,&quot;e&quot;:5&#125;&#x27;</span>;<br>text = json.loads(jsonData)<br>print(text)<br><br><span class="hljs-comment"># 加载配置，configuration_path：配置文件路径</span><br><span class="hljs-comment"># 使用 loads（string）：作用将 string 类型转为 dict 字典或 dict 链表</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">load_conf</span>(<span class="hljs-params">configuration_path</span>):</span><br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(configuration_path, <span class="hljs-string">&#x27;r&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>        string = f.read()<br>    <span class="hljs-keyword">return</span> json.loads(string)<br><br><span class="hljs-comment"># 使用 load（file_stream）：作用从文件流直接读取并转换为 dict 字典或 dict 字典链表</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">load_conf</span>(<span class="hljs-params">configuration_path</span>):</span><br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(configuration_path, <span class="hljs-string">&#x27;r&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>        data = json.load(f)<br>    <span class="hljs-keyword">return</span> data<br></code></pre></div></td></tr></table></figure>
+
+<p> 输出：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">&#123;<span class="hljs-string">&#x27;a&#x27;</span>: 1, <span class="hljs-string">&#x27;b&#x27;</span>: 2, <span class="hljs-string">&#x27;c&#x27;</span>: 3, <span class="hljs-string">&#x27;d&#x27;</span>: 4, <span class="hljs-string">&#x27;e&#x27;</span>: 5&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p> <strong>Python原始类型向Json类型的转换对照表：</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Json</th>
+<th align="center">Python</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">object</td>
+<td align="center">dict</td>
+</tr>
+<tr>
+<td align="center">array</td>
+<td align="center">list</td>
+</tr>
+<tr>
+<td align="center">string</td>
+<td align="center">unicode</td>
+</tr>
+<tr>
+<td align="center">number(int)</td>
+<td align="center">int,long</td>
+</tr>
+<tr>
+<td align="center">number(real)</td>
+<td align="center">float</td>
+</tr>
+<tr>
+<td align="center">true</td>
+<td align="center">True</td>
+</tr>
+<tr>
+<td align="center">false</td>
+<td align="center">False</td>
+</tr>
+<tr>
+<td align="center">null</td>
+<td align="center">None</td>
+</tr>
+</tbody></table>
+<ul>
+<li>大 JSON 字符串</li>
+</ul>
+ <figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> tempfile<br>data = [&#123;<span class="hljs-string">&#x27;name&#x27;</span>:<span class="hljs-string">&#x27;rocky&#x27;</span>,<span class="hljs-string">&#x27;like&#x27;</span>:(<span class="hljs-string">&#x27;python&#x27;</span>,<span class="hljs-string">&#x27;c++&#x27;</span>),<span class="hljs-string">&#x27;age&#x27;</span>:<span class="hljs-number">23</span>&#125;]<br>f = tempfile.NamedTemporaryFile(mode = <span class="hljs-string">&#x27;w+&#x27;</span>)<br>json.dump(data,f)<br>f.flush()<br>print(<span class="hljs-built_in">open</span>(f.name,<span class="hljs-string">&#x27;r&#x27;</span>).read())<br></code></pre></div></td></tr></table></figure>
+
+<p> 输出：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">[&#123;<span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;rocky&quot;</span>, <span class="hljs-string">&quot;like&quot;</span>: [<span class="hljs-string">&quot;python&quot;</span>, <span class="hljs-string">&quot;c++&quot;</span>], <span class="hljs-string">&quot;age&quot;</span>: 23&#125;]<br></code></pre></div></td></tr></table></figure>
+
+<blockquote>
+<p>Python 中提供了一个 tempfile 的模块来解决json数据量大时内存溢出的问题</p>
+</blockquote>
+<hr>
+</li>
+</ol>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/python-%E5%9F%BA%E7%A1%80/">-python -基础</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/03/08/Linux%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
+                        <span class="hidden-mobile">Linux学习记录</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+  <!-- 备案信息 -->
+  <div class="beian">
+    <span>
+      <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+        陕ICP备2021001944号-1
+      </a>
+    </span>
+    
+      
+        <span class="beian-police">
+          
+            <span style="visibility: hidden; width: 0">|</span>
+            <img src="/img/police_beian.png" srcset="/img/loading.gif" alt="police-icon"/>
+          
+          <span class="beian-police">京公网安备12345678号</span>
+        </span>
+      
+    
+  </div>
+
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
