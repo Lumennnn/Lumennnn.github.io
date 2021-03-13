@@ -219,7 +219,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2 分钟前
+                  本文最后更新于：几秒前
                 
               </p>
             
@@ -244,7 +244,7 @@
 <p> 输出：  </p>
  <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">2021-03-13-08:26:17<br>time.struct_time(tm_year=2021, tm_mon=3, tm_mday=13, tm_hour=8, tm_min=45, tm_sec=48, tm_wday=5, tm_yday=72, tm_isdst=-1)<br></code></pre></div></td></tr></table></figure>
  <!-- 表格（table） -->
-<p> &lt;<img src="https://lumennnnn.oss-cn-beijing.aliyuncs.com/notebook/20210313234205.png" srcset="/img/loading.gif" alt="20210313234205">&gt;</p>
+<p> <img src="https://lumennnnn.oss-cn-beijing.aliyuncs.com/notebook/20210313234205.png" srcset="/img/loading.gif" alt="1"></p>
  <figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> time    <span class="hljs-comment"># 返回一个CPU级别的精确时间计数，单位为秒</span><br>start = time.perf_counter()<br>time.sleep(<span class="hljs-number">3</span>)    <span class="hljs-comment"># 模拟休眠，可以是浮点数。推迟调用线程的运行，可通过参数 secs 指秒数，表示进程挂起的时间。</span><br>end = time.perf_counter()<br>print(end - start)<br></code></pre></div></td></tr></table></figure>
 
 <p> 输出：  </p>
