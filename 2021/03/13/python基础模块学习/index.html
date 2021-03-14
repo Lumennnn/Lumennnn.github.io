@@ -87,18 +87,6 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                归档
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
               <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 分类
@@ -146,7 +134,7 @@
                   
                   <a class="dropdown-item" target="_blank" rel="noopener" href="http://101.37.12.150:7777">
                     <i class="iconfont icon-code"></i>
-                     jupyter
+                    jupyter
                   </a>
                 
                   
@@ -235,7 +223,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.6k 字
+      1.5k 字
     </span>
   
 
@@ -245,7 +233,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      29
+      28
        分钟
     </span>
   
@@ -286,7 +274,8 @@
             <div class="markdown-body">
               <p>Python基础模块的了解和学习</p>
 <span id="more"></span>
-<h2 id="内置模块"><a href="#内置模块" class="headerlink" title="内置模块"></a>内置模块</h2><h3 id="time模块"><a href="#time模块" class="headerlink" title="time模块"></a>time模块</h3><ol>
+<h2 id="内置模块"><a href="#内置模块" class="headerlink" title="内置模块"></a>内置模块</h2><p>🎉</p>
+<h3 id="time模块"><a href="#time模块" class="headerlink" title="time模块"></a>time模块</h3><ol>
 <li><p>时间获取函数</p>
  <figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> time<br>print(time.time())  <span class="hljs-comment"># 获取当前时间戳</span><br>print(time.ctime()) <span class="hljs-comment"># 获取当前时间并以易读方式表示，返回字符串</span><br>print(time.gmtime()) <span class="hljs-comment"># 获取当前时间，表示为计算机可处理的时间格式,UTC时间，以格式化模板输出  &lt;UTC：协调世界时&gt;</span><br>print(time.asctime()) <span class="hljs-comment"># 未被定义，表示当前时间</span><br>print(time.localtime()) <span class="hljs-comment"># 输出当前时间，以格式化模板输出,本地时间</span><br></code></pre></div></td></tr></table></figure>
 
@@ -298,8 +287,7 @@
 <p> 输出：  </p>
  <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">2021-03-13-08:26:17<br>time.struct_time(tm_year=2021, tm_mon=3, tm_mday=13, tm_hour=8, tm_min=45, tm_sec=48, tm_wday=5, tm_yday=72, tm_isdst=-1)<br></code></pre></div></td></tr></table></figure>
 
- <!-- 表格（table） -->
-<p> <strong>字符串格式化表</strong><br> 格式化字符串|时间说明|值范围<br> |:—:|:—:|:—:|:—:|<br> %Y|年份|0000<del>9999<br> %m|月份|01</del>12<br> %B|月份名称<br> %b|月份名称缩写<br> %d|日期|01<del>31<br> %A|星期<br> %a|星期缩写<br> %H|小时(24h制)|00</del>23<br> %l|小时(12h制)|01<del>12<br> %p|上/下午|AM,PM<br> %M|分钟|00</del>59<br> %S|秒|00~59</p>
+<p> <img src="https://resource.liangzai.online/notebook/20210313234205.png#pic_left" srcset="/img/loading.gif" alt="格式化字符串对应属性"></p>
  <figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> time    <span class="hljs-comment"># 返回一个CPU级别的精确时间计数，单位为秒</span><br>start = time.perf_counter()<br>time.sleep(<span class="hljs-number">3</span>)    <span class="hljs-comment"># 模拟休眠，可以是浮点数。推迟调用线程的运行，可通过参数 secs 指秒数，表示进程挂起的时间。</span><br>end = time.perf_counter()<br>print(end - start)<br></code></pre></div></td></tr></table></figure>
 
 <p> 输出：  </p>
