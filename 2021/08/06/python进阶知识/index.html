@@ -1,0 +1,585 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://resource.liangzai.online/resource/aixin.ico">
+  <link rel="icon" href="https://resource.liangzai.online/resource/aixin.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  
+    <meta name="description" content="">
+  
+  <meta name="author" content="Lumen">
+  <meta name="keywords" content="">
+  
+  <title>python进阶知识 - liangzai的学习记录</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.8","typing":{"enable":true,"typeSpeed":75,"cursorChar":"🐱‍🏍","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Liangzaiiiiiii</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-slack-fill"></i>
+                more
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://api.liangzai.online') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="python进阶知识">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      Lumen
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-08-06 21:41" pubdate>
+        2021年8月6日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.7k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      25
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">python进阶知识</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2 分钟前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h2 id="进阶知识"><a href="#进阶知识" class="headerlink" title="进阶知识"></a>进阶知识</h2><p><strong>Python 中函数带括号和不带括号的区别</strong>：</p>
+<blockquote>
+<ol>
+<li>不带括号时，调用的是这个函数本身，是整个函数体，是一个函数对象，不需要等待该函数执行完成</li>
+<li>带括号（此时必须传入需要的参数），调用的函数的return结果，需要等待函数执行完成的结果</li>
+<li>如果函数本身带有参数的时候，带括号就必须带参数，同理，函数本身不带参数，带括号就不能带参数</li>
+</ol>
+</blockquote>
+<p>范例：</p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">a</span>(<span class="hljs-params">x</span>)</span><br><span class="hljs-function">    <span class="hljs-title">print</span>(<span class="hljs-params"><span class="hljs-string">&quot;!&quot;</span></span>)</span><br><span class="hljs-function">    <span class="hljs-title">return</span> <span class="hljs-title">x</span></span><br><span class="hljs-function"><span class="hljs-title">print</span>(<span class="hljs-params">a</span>)</span><br><span class="hljs-function"><span class="hljs-title">print</span>(<span class="hljs-params">a(<span class="hljs-params"><span class="hljs-number">10</span></span>)</span>)</span><br></code></pre></div></td></tr></table></figure>
+
+<p>输出结果：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cmd">&lt;function a <span class="hljs-built_in">at</span> <span class="hljs-number">0</span>x&gt;<br><span class="hljs-number">10</span><br></code></pre></div></td></tr></table></figure>
+
+<p><strong>函数参数</strong>：<br><img src="python%E5%8F%82%E6%95%B0.jpg" srcset="/img/loading.gif" alt="python参数"></p>
+<h3 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h3><h4 id="形式参数"><a href="#形式参数" class="headerlink" title="形式参数"></a>形式参数</h4><p>形参即在定义函数时，括号内声明的参数。本质上是一个变量名，用来接受外部传来的值</p>
+<h4 id="实际参数"><a href="#实际参数" class="headerlink" title="实际参数"></a>实际参数</h4><p>实参即调用函数时，括号内传入的值，值可以是常量、变量、表达式或三者的组合</p>
+<h4 id="形参与实参的具体使用"><a href="#形参与实参的具体使用" class="headerlink" title="形参与实参的具体使用"></a>形参与实参的具体使用</h4><ol>
+<li><p>位置参数</p>
+<p>在定义函数时，按照从左到右的顺序依次定义形参，称为位置形参，凡是按照这种形式定义的形参都必须被传值</p>
+<p>在调用函数时，按照从左到右的顺序依次定义实参，称为位置实参，凡是按照这种形式定义的实参会按照从左到右的我顺序与形参一一对应</p>
+</li>
+<li><p>关键字参数</p>
+<p>在调用函数时，实参可以是 key=value 的形式，称为关键字参数，凡是按照这种形式定义的实参，可以完全不按照从左到右的顺序定义，但仍能为指定的形参赋值</p>
+<p>需要注意在调用函数时，实参也可以是按位置或按关键字的混合使用，但必须保证关键字参数在位置参数后面，且不可以对一个形参重复赋值</p>
+</li>
+<li><p>默认参数</p>
+<p>在定义函数时，就已经为形参赋值，这类形参称之为默认参数，当函数有多个参数时，需要将值经常改变的参数定义成位置参数，而将值改变较少的参数定义成默认参数。</p>
+<blockquote>
+<p>默认参数必须在位置参数之后<br>默认参数的值仅在函数定义阶段被赋值一次</p>
+</blockquote>
+</li>
+<li><p>可变长参数</p>
+<ul>
+<li><p>可变长度的位置参数</p>
+<p> 如果在最后一个形参名前加*号，那么在调用函数时，溢出的位置实参，都会被接收，以<em>元组</em>的形式保存下来赋值给该形参</p>
+<p> 如果我们事先生成了一个列表，仍然是可以传值给 *args 的<br> 如果形参为常规参数（位置或默认），实参仍可以是 * 的形式<br> 注意：如果在传入 L 时没有加 *, 那 L 就只是一个普通的位置参数</p>
+</li>
+<li><p>可变长度的关键字参数</p>
+<p> 如果在最后一个形参名前加**号，那么在调用函数时，溢出的关键字参数，都会被接收，以<em>字典</em>的形式保存下来赋值给该形参</p>
+<p> 如果我们事先生成了一个字典，仍然是可以传值给 **kwargs的<br> 如果形参为常规参数（位置或默认），实参仍可以是 ** 的形式<br> 注意：如果在传入 dic 时没有加 **, 那 dic 就只是一个普通的位置参数了</p>
+</li>
+</ul>
+</li>
+<li><p>命名关键字参数</p>
+<p>想要限定函数的调用者必须以 key=value 的形式传值，Python3 提供了专门的语法：需要在定义形参时，用*作为一个分隔符号，*号之后的形参称为命名关键字参数。对于这类参数，在函数调用时，必须按照 key=value 的形式为其传值，且必须被传值</p>
+<p>命名关键字参数也可以有默认值，从而简化调用</p>
+<p>如果形参中已经有一个*args 了，命名关键字参数就不再需要一个单独的 *作为分隔符号了</p>
+</li>
+<li><p>组合使用</p>
+<p>所有参数可任意组合使用，但定义顺序必须是：位置参数、默认参数、args、命名关键字参数、*kwargs</p>
+<p>可变参数*args 与关键字参数**kwargs 通常是组合在一起使用的，如果一个函数的形参为*args与**kwargs，那么代表该函数可以接收任何形式、任意长度的参数</p>
+<p>在该函数内部还可以把接收到的参数传给另外一个函数</p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func</span>(<span class="hljs-params">x, y, z</span>):</span><br>   print(x, y)<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">wrapper</span>(<span class="hljs-params">*args, **kwargs</span>):</span><br>   func(*args, **kwargs)<br><br>wrapper(<span class="hljs-number">1</span>, z=<span class="hljs-number">3</span>, y=<span class="hljs-number">2</span>)<br></code></pre></div></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">1 2 3<br></code></pre></div></td></tr></table></figure></li>
+</ol>
+<p><strong>装饰器</strong>：</p>
+<h3 id="在代码运行期间动态增加功能的方式，称之为-“装饰器”（Decorator）"><a href="#在代码运行期间动态增加功能的方式，称之为-“装饰器”（Decorator）" class="headerlink" title="在代码运行期间动态增加功能的方式，称之为 “装饰器”（Decorator）"></a>在代码运行期间动态增加功能的方式，称之为 “装饰器”（Decorator）</h3><p>函数也是对象，它有__name__等属性，但经过decorator装饰之后的函数，它们的__name__已经改变为装饰器中的函数名，所以需要把原始函数的__name__等属性复制到装饰器中的函数中，否则，有些依赖函数签名的代码执行就会出错。不需要编写 wrapper.<strong>name</strong> = func.__name__这样的代码，Python 内置functools.wraps 就是干这个事的，所以，一个完整的 decorator 的写法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> functools<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">log</span>(<span class="hljs-params">text</span>):</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">decorator</span>(<span class="hljs-params">func</span>):</span><br><span class="hljs-meta">        @functools.wraps(<span class="hljs-params">func</span>)</span><br>        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">wrapper</span>(<span class="hljs-params">*args, **kw</span>):</span><br>            print(<span class="hljs-string">&#x27;&#123;&#125; &#123;&#125;():&#x27;</span>.<span class="hljs-built_in">format</span>(text, func.__name__))<br>            <span class="hljs-keyword">return</span> func(*args, **kw)<br>        <span class="hljs-keyword">return</span> wrapper<br>    <span class="hljs-keyword">return</span> decorator<br></code></pre></div></td></tr></table></figure>
+
+<h3 id="property"><a href="#property" class="headerlink" title="@property"></a>@property</h3><p>@property 装饰器来创建只读属性，@property 装饰器会将方法转换为相同名称的只读属性 , 可以与所定义的属性配合使用，这样可以防止属性被修改。</p>
+<ol>
+<li><p>修饰方法，是方法可以像属性一样访问</p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DataSet</span>(<span class="hljs-params"><span class="hljs-built_in">object</span></span>):</span><br><span class="hljs-meta">  @property</span><br>  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">method_with_property</span>(<span class="hljs-params">self</span>):</span> <span class="hljs-comment"># 含有@property</span><br>      <span class="hljs-keyword">return</span> <span class="hljs-number">15</span><br>  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">method_without_property</span>(<span class="hljs-params">self</span>):</span> <span class="hljs-comment"># 不含@property</span><br>      <span class="hljs-keyword">return</span> <span class="hljs-number">15</span><br><br>l = DataSet()<br>print(l.method_with_property) <span class="hljs-comment"># 加了@property后，可以用调用属性的形式来调用方法,后面不需要加（）。</span><br>print(l.method_without_property())  <span class="hljs-comment"># 没有加@property , 必须使用正常的调用方法的形式，即在后面加()</span><br><span class="hljs-comment"># 两个都输出为 15</span><br></code></pre></div></td></tr></table></figure></li>
+<li><p>与所定义的属性配合使用，这样可以防止属性被修改。</p>
+<p>由于 python 进行属性的定义时，没办法设置私有属性，因此要通过 @property 的方法来进行设置。这样可以隐藏属性名，让用户进行使用的时候无法随意修改。</p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DataSet</span>(<span class="hljs-params"><span class="hljs-built_in">object</span></span>):</span><br>   <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span>(<span class="hljs-params">self</span>):</span><br>      self._images = <span class="hljs-number">1</span><br>      self._labels = <span class="hljs-number">2</span> <span class="hljs-comment">#定义属性的名称</span><br><span class="hljs-meta">   @property</span><br>   <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">images</span>(<span class="hljs-params">self</span>):</span> <span class="hljs-comment">#方法加入@property后，这个方法相当于一个属性，这个属性可以让用户进行使用，而且用户有没办法随意修改。</span><br>      <span class="hljs-keyword">return</span> self._images<br><span class="hljs-meta">   @property</span><br>   <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">labels</span>(<span class="hljs-params">self</span>):</span><br>      <span class="hljs-keyword">return</span> self._labels<br>   l = DataSet()<br><span class="hljs-comment">#用户进行属性调用的时候，直接调用images即可，而不用知道属性名_images，因此用户无法更改属性，从而保护了类的属性。</span><br>   print(l.images) <span class="hljs-comment"># 加了@property后，可以用调用属性的形式来调用方法,后面不需要加（）。</span><br></code></pre></div></td></tr></table></figure></li>
+</ol>
+<p><strong>魔法函数</strong>：</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%A6%E4%B9%A0/">计算机学习</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/pythoh/">pythoh</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/03/13/python%E5%9F%BA%E7%A1%80%E6%A8%A1%E5%9D%97%E5%AD%A6%E4%B9%A0/">
+                        <span class="hidden-mobile">python基础模块学习</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+  <!-- 备案信息 -->
+  <div class="beian">
+    <span>
+      <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+        陕ICP备2021001944号-1
+      </a>
+    </span>
+    
+      
+        <span class="beian-police">
+          
+            <span style="visibility: hidden; width: 0">|</span>
+            <img src="/img/police_beian.png" srcset="/img/loading.gif" alt="police-icon"/>
+          
+          <span class="beian-police">京公网安备12345678号</span>
+        </span>
+      
+    
+  </div>
+
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

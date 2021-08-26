@@ -1,0 +1,807 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://resource.liangzai.online/resource/aixin.ico">
+  <link rel="icon" href="https://resource.liangzai.online/resource/aixin.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  
+    <meta name="description" content="">
+  
+  <meta name="author" content="Lumen">
+  <meta name="keywords" content="">
+  
+  <title>C基础 - liangzai的学习记录</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.8","typing":{"enable":true,"typeSpeed":75,"cursorChar":"🐱‍🏍","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Liangzaiiiiiii</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-slack-fill"></i>
+                more
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://api.liangzai.online') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="C基础">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      Lumen
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-03-06 21:41" pubdate>
+        2021年3月6日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      42
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">C基础</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2 分钟前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <p><strong>程序</strong>：为了让计算机执行某些操作或解决某个问题而编写的一系列有序指令的集合</p>
+<blockquote>
+<p>计算机指令：指挥机器工作的指示和命令</p>
+</blockquote>
+<p><strong>算法</strong>：是一个定义明确的计算过程，可以将一些值或一组值作为输入并产生一些值或一组值作为输出。因此算法就是将输入转化为输出的一系列计算步骤</p>
+<p><strong>编译和执行过程</strong>：</p>
+<blockquote>
+<ol>
+<li>编译：形成目标文件/代码。目标文件是编译器的输出结果，常见扩展名为“.o”或“.obj”</li>
+<li>连接：将目标代码跟C函数库相连接，并将源程序所用的库代码与目标代码合并形成最终可执行的二进制机器代码</li>
+<li>执行：在特定的机器环境下运行C应用程序</li>
+</ol>
+</blockquote>
+<p>计算机使用内存来记忆或存储计算时所使用的数据</p>
+<blockquote>
+<p>计算机在执行程序时，组成程序的指令和程序所操作的数据都必须存放在计算机的内存中<br>内存：也成为主存（main memory）或随机访问储存器（Random Access Memorry）</p>
+</blockquote>
+<p>bit（位），binary digit（二进制数字）</p>
+<p>8 bit(比特) = 1 byte(字节)</p>
+<p><strong>变量</strong>：计算机中一块特定的内存空间，由一个或多个连续的字节组成</p>
+<p><strong>C语言变量命名规则</strong>：</p>
+<blockquote>
+<ol>
+<li>只能由字母、数字和下划线三种字符组成，且第一个字母必须位字母或下划线</li>
+<li>变量名不能包含除_以外的任何特殊字符</li>
+<li>不可以使用保留字</li>
+</ol>
+</blockquote>
+<p><strong>数据类型</strong>：</p>
+<blockquote>
+<ul>
+<li>数值<ul>
+<li>整形<ul>
+<li>int</li>
+<li>short</li>
+<li>long</li>
+</ul>
+</li>
+<li>非整形<ul>
+<li>float</li>
+<li>double</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>非数值<ul>
+<li>char</li>
+<li>str</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>清除缓冲区  fflush(stdin)</p>
+<p><strong>运算符</strong>：</p>
+<blockquote>
+<ul>
+<li>赋值运算符</li>
+<li>算术运算符<ul>
+<li>一元运算符: ++、–</li>
+<li>二元运算符：+、-、*、/、%</li>
+</ul>
+</li>
+<li>关系运算符</li>
+<li>逻辑运算符：&amp;&amp;且、||或、!非</li>
+<li>位运算符</li>
+</ul>
+</blockquote>
+<p><strong>使用switch结构时的注意点</strong>：</p>
+<blockquote>
+<ol>
+<li>switch后的表达式只能是整型或字符型</li>
+<li>case后常量表达式的值不能相同</li>
+<li>case后允许多条语句，不需要大括号</li>
+<li>如果不添加break语句，需要特别注意执行顺序</li>
+<li>default子句可以省略</li>
+</ol>
+</blockquote>
+<p><strong>continue</strong>: 跳过本次循环，继续下次循环</p>
+<p><strong>数组</strong>：是一个变量，由数据类型相同的一组元素组成的</p>
+<blockquote>
+<ol>
+<li>标识符：数组的名称，用于区分不同的数组</li>
+<li>数组元素：向数组中存放的数据</li>
+<li>元素下标：对数组元素进行编号</li>
+<li>元素类型：数组元素的数据类型</li>
+</ol>
+</blockquote>
+<p><strong>枚举</strong>：enum　枚举名　{枚举元素1,枚举元素2,……} 枚举变量</p>
+<blockquote>
+<p>每一个变量都有一个内存地址，每一个内存位置都定义了可使用&amp;运算符访问的地址，它表示了在内存中的一个地址。</p>
+</blockquote>
+<p><strong>指针</strong>：指针也就是内存地址，指针变量用来存放内存地址的变量，就像其他变量或常量一样，必须在使用指针存储其他变量地址之前，对其进行声明。type *var-name  星号用来指定一个变量是指针</p>
+<blockquote>
+<ol>
+<li>所有实际数据类型，不管是整型、浮点型、字符型，还是其他的数据类型，对应指针的值的类型都是一样的，都是一个代表内存地址的长的十六进制数。不同数据类型的指针之间唯一的不同是，指针所指向的变量或常量的数据类型不同。</li>
+<li>通过使用一元运算符 * 来返回位于操作数所指定地址的变量的值</li>
+<li>在变量声明的时候，如果没有确切的地址可以赋值，为指针变量赋一个 NULL 值是一个良好的编程习惯。赋为 NULL 值的指针被称为空指针。</li>
+<li>在大多数的操作系统上，程序不允许访问地址为 0 的内存，因为该内存是操作系统保留的。然而，内存地址 0 有特别重要的意义，它表明该指针不指向一个可访问的内存位置。但按照惯例，如果指针包含空值（零值），则假定它不指向任何东西。</li>
+</ol>
+</blockquote>
+<p><strong>C指针的算数运算</strong>：C 指针是一个用数值表示的地址。因此，您可以对指针执行算术运算。可以对指针进行四种算术运算：++、–、+、-。</p>
+<blockquote>
+<ol>
+<li>指针的每一次递增，它其实都会指向下一个元素的存储单位</li>
+<li>指针的每一次递减，它都会指向前一个元素的存储单位</li>
+<li>指针在递增和递减时跳跃的字节数取决于指针所指向变量数据类型长度，比如int就是4个字节</li>
+<li>指针可以用关系运算符进行比较，如 ==、&lt;和&gt;。如果 p1 和 p2 指向两个相关的变量，比如同一个数组中的不同元素，则可对 p1 和 p2 进行大小比较。</li>
+</ol>
+</blockquote>
+<p><strong>指针数组</strong>：int *ptr[MAX];</p>
+<blockquote>
+<p>把 ptr 声明为一个数组，由 MAX 个整数指针组成。因此，ptr 中的每个元素，都是一个指向 int 值的指针。 也可以用一个指向字符的指针数组来存储一个字符串列表。ptr[i] →*(ptr + i)</p>
+</blockquote>
+<p><strong>C指向指针的指针</strong>：指向指针的指针时一种多级间寻址的形式，或者说是一个指针链。当我们定义一个指向指针的指针时，第一个指针包含了第二个指针的地址，第二个指针指向包含实际值的位置。一个指向指针的指针变量必须如下声明，即在变量名前放置两个星号： int **var;</p>
+<blockquote>
+<p>当一个目标值被一个指针间接指向到另一个指针时，访问这个值需要使用两个星号运算符</p>
+</blockquote>
+<p><strong>C传递指针给函数</strong>：C 语言允许传递指针给函数，只需要简单地声明函数参数为指针类型即可</p>
+<blockquote>
+<p>能接受指针作为参数的函数，也能接受数组作为参数</p>
+</blockquote>
+<p><strong>函数指针</strong>：是指向函数的指针变量</p>
+<blockquote>
+<p>通常我们说的指针变量是指向一个整形、字符型或数组等变量，而函数指针是指向函数，函数指针可以像一般函数一样，用于调用函数、传递参数。</p>
+</blockquote>
+<p><strong>函数</strong>：</p>
+<blockquote>
+<ol>
+<li>是完成特定任务的独立程序代码</li>
+<li>语法规则定义了函数的结构和使用方式</li>
+</ol>
+</blockquote>
+<p>零表示假，非零表示真</p>
+<p><strong>关于free函数</strong>：</p>
+<blockquote>
+<ol>
+<li>必须是通过molloc、calloc或realloc分配内存的指针</li>
+<li>释放的指针必须是初始分配的地址，进行运算后需要恢复</li>
+</ol>
+</blockquote>
+<p><strong>自定义函数</strong>：</p>
+<blockquote>
+<ul>
+<li>函数三要素：<ul>
+<li>返回值类型</li>
+<li>函数名</li>
+<li>参数列表</li>
+</ul>
+</li>
+<li>返回值<ul>
+<li>关键字：return</li>
+<li>只能返回一个值，不能返回多个值</li>
+<li>返回值类型必须与原型中的返回值类型匹配</li>
+<li>return会立即终止函数并返回，可返回空值</li>
+</ul>
+</li>
+<li>参数<ul>
+<li>形式参数</li>
+<li>实际参数</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>declare：宣布；宣告；宣称；表明 网络 声明；申报；断言</p>
+<p><strong>变量的存储类型</strong>：</p>
+<blockquote>
+<ol>
+<li>auto     自动存储</li>
+<li>register 寄存器存储</li>
+<li>static   静态存储</li>
+<li>extern   外部变量</li>
+</ol>
+</blockquote>
+<p><strong>变量的生存周期</strong>：</p>
+<blockquote>
+<ol>
+<li>变量的存储方式：动态存储（自动、寄存器）、静态存储（静态和外部）</li>
+<li>由变量的存储方式不同而产生的特性称为变量的生存期（变量的存在时间）</li>
+<li>基本类型的静态变量系统默认赋初值为0</li>
+<li>静态变量的生存周期为整个源程序，作用域只是定义它的文件</li>
+<li>函数被调用时，其中的局部静态变量的值保留前次被调用的结果</li>
+</ol>
+</blockquote>
+<p><strong>按值传递</strong>：给函数传递变元（参数）时，变元（参数）值不会直接传递给函数，而是先制作变元（参数）值的副本，存储在栈上，再使这个副本可用于函数，而不是使用初始值。</p>
+<p><strong>引用传递</strong>：指在调用函数时将实际参数的地址传递到函数中，那么在函数中对参数所进行的修改，将影响到实际参数</p>
+<p><strong>自定义头文件</strong>：一般放一些重复使用的代码，例如函数声明，变量声明，常量声明，宏的定义等</p>
+<blockquote>
+<ol>
+<li>MYHEADER_H_INCLUDED为一个唯一的标记，命名规则跟变量的命名规则一样，常根据它所在的头文件名来命名</li>
+<li>代码含义：如果没有定义MYHEADER_H_INCLUDED，则定义MYHEADER_H_INCLUDED，并编译下面的代码部分，直到遇到#endif</li>
+</ol>
+</blockquote>
+<p><strong>字符串</strong>：</p>
+<blockquote>
+<ol>
+<li>一个或多个字符的序列称为字符串</li>
+<li>双引号不是字符串的一部分，仅用来告知编译器括起来的是字符串</li>
+<li>C语言中字符串使用字符数组存储</li>
+<li>声明存储字符串的数组时，数组大小至少比所存储的字符数多1，因为编译器会自动在字符串常量的末尾添加空字符\0</li>
+</ol>
+</blockquote>
+<p><strong>gets和puts函数</strong>：</p>
+<blockquote>
+<ul>
+<li>gets函数不对接受字符串的buffer进行边界检测，会造成越界，从而产生bug</li>
+<li>可以使用fgets(words1, 20, stdin);代替gets，20表示最多读取20-1个字符，默认给最后一个元素回车</li>
+<li>三种方式录入字符串<ul>
+<li>scanf(“%s”, str);</li>
+<li>gets(str);</li>
+<li>fgets(str, 50, stdin);</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p><strong>常用字符串处理函数</strong>：</p>
+<blockquote>
+<ol>
+<li>size_t strlen(const char *)  获取字符串长度</li>
+<li>char <em>strupr(char</em>)  将字符串转换为大写</li>
+<li>char <em>strlwr(char</em>)  将字符串转换为小写</li>
+<li>char <em>strcopy(char</em>, const char *)  把第二个字符串复制到第一个字符串数组中</li>
+<li>in strcmp(const char*, constr char*)  根据ASCII码比较字符串</li>
+<li>char <em>strcat(char</em>, const char *)    字符串连接，把第二个元素连接到第一个元素后</li>
+</ol>
+</blockquote>
+<p>数组为常量</p>
+<blockquote>
+</blockquote>
+<p><strong>指向字符串的指针</strong>：</p>
+<blockquote>
+<ul>
+<li>将指针指向字符串<ul>
+<li>可以指向常量字符串</li>
+<li>也可以指向存储字符串的字符数组</li>
+</ul>
+</li>
+<li>数组形式和执行形式的不同<ul>
+<li>初始化字符数组时会把静态存储区的字符串拷贝到数组中</li>
+<li>初始化指针时只把字符串的地址拷贝给指针</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p><strong>结构</strong>：一种构造数据类型，由若干个数据项组合而成</p>
+<blockquote>
+<p>struct StructName<br>{<br>//结构成员<br>DataType1 var1;<br>DataType2 var2;<br>//…<br>} VAR1, VAR2;</p>
+<ol>
+<li>结构定义并不预留内存</li>
+<li>结构定义一般放在程序的开始部分（头文件声明之后）</li>
+<li>结构定义仅用来描述结构的形式，使用结构需要声明结构变量</li>
+<li>定义结构的同时，声明结构变量</li>
+</ol>
+</blockquote>
+<p><strong>指向结构的指针</strong>：</p>
+<blockquote>
+<ul>
+<li>一个指针指向结构时，称为结构指针变量</li>
+<li>结构指针变量中的值是所指向的结构变量的首地址</li>
+<li>一般形式：struct 结构名称 结构指针变量名;</li>
+<li>访问结构成员的一般形式：<ul>
+<li>(*结构指针变量).成员变量名</li>
+<li>结构指针变量-&gt;成员变量名</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p><strong>结构数组</strong>：元素为结构类型的数组</p>
+<p><strong>向函数传递结构的信息</strong>：</p>
+<blockquote>
+<ul>
+<li>结构作为函数参数的三种方式<ul>
+<li>传递结构成员</li>
+<li>传递结构<ul>
+<li>优点：函数处理的是原始数据的副本，保护了原始数据</li>
+<li>缺点：老版本不支持；传递结构浪费时间和存储空间</li>
+<li>一般用来处理小型数据结构</li>
+</ul>
+</li>
+<li>传递结构的地址<ul>
+<li>优点：程序的执行速度快，效率高</li>
+<li>缺点：无法保护数据，函数中的操作可能会意外影响原结构中的数据</li>
+<li>为了最求效率，常用此方案</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p><strong>typedef</strong>：可以为某一类型自定义名称</p>
+<blockquote>
+<p>并没有创造任何新类型，只是为某个已存在的类型增加一个方便使用的标签</p>
+</blockquote>
+<p>枚举和联合</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%A6%E4%B9%A0/">计算机学习</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/C/">C</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/03/08/Linux%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Linux学习记录</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+  <!-- 备案信息 -->
+  <div class="beian">
+    <span>
+      <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+        陕ICP备2021001944号-1
+      </a>
+    </span>
+    
+      
+        <span class="beian-police">
+          
+            <span style="visibility: hidden; width: 0">|</span>
+            <img src="/img/police_beian.png" srcset="/img/loading.gif" alt="police-icon"/>
+          
+          <span class="beian-police">京公网安备12345678号</span>
+        </span>
+      
+    
+  </div>
+
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
